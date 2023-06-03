@@ -14,12 +14,13 @@ public class CharaCtl : MonoBehaviour
     [SerializeField]
     private bool isItemTouching;
     public GameObject bucket;
+    public float xOffset;
     public float yOffset;
     private bool isItemGetting;
-    ItemObj collisionItem;
-    ItemObj item;
+    private ItemObj collisionItem;
+    public ItemObj item;
     Animator animator;
-
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +51,7 @@ public class CharaCtl : MonoBehaviour
         }
 
         //キャラクターをジャンプさせる
-        if (Input.GetButtonDown("Jump")&&!isJumping){
+        if (Input.GetKeyDown(KeyCode.UpArrow)&&!isJumping){
             rb2d.AddForce(Vector2.up*jumpSpeed);
             isJumping=true;
             Debug.Log("Jump");
@@ -65,6 +66,12 @@ public class CharaCtl : MonoBehaviour
         if(isItemGetting){
             bucket.transform.position=transform.position+Vector3.up*yOffset;
         }
+
+        if(isItemGetting && Input.GetKeyDown(KeyCode.RightShift)){
+            bucket.transform.position=transform.position+Vector3.right*xOffset;
+            isItemGetting=false;
+            item=null; 
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -74,17 +81,13 @@ public class CharaCtl : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.gameObject.CompareTag("Bucket")){
-            isItemTouching=true;
-            collisionItem = collision.GetComponent<ItemObj>();
-        }
+        isItemTouching=true;
+        collisionItem = collision.GetComponent<ItemObj>();
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if(collision.gameObject.CompareTag("Bucket")){
             isItemTouching=false;
             collisionItem = null;
-        }
     }
 
 }
