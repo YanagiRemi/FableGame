@@ -13,7 +13,8 @@ public class CharaCtl : MonoBehaviour
     private bool isJumping;
     [SerializeField]
     private bool isItemTouching;
-    public GameObject bucket;
+    public GameObject itemObject;
+    public GameObject collisionObject;
     public float xOffset;
     public float yOffset;
     private bool isItemGetting;
@@ -58,17 +59,18 @@ public class CharaCtl : MonoBehaviour
         }
 
         if(!isItemGetting && isItemTouching && Input.GetKeyDown(KeyCode.Return)){
-            bucket.transform.position=transform.position+Vector3.up*yOffset;
+            itemObject=collisionObject;
+            itemObject.transform.position=transform.position+Vector3.up*yOffset;
             isItemGetting=true;
             item = collisionItem;
             // Debug.Log(item.ItemType);
         }
         if(isItemGetting){
-            bucket.transform.position=transform.position+Vector3.up*yOffset;
+            itemObject.transform.position=transform.position+Vector3.up*yOffset;
         }
 
         if(isItemGetting && Input.GetKeyDown(KeyCode.RightShift)){
-            bucket.transform.position=transform.position+Vector3.right*xOffset;
+            itemObject.transform.position=transform.position+Vector3.right*xOffset;
             isItemGetting=false;
             item=null; 
         }
@@ -81,6 +83,7 @@ public class CharaCtl : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
+        collisionObject=collision.gameObject;
         isItemTouching=true;
         collisionItem = collision.GetComponent<ItemObj>();
     }

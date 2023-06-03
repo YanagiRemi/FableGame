@@ -12,6 +12,10 @@ public class Kawa : MonoBehaviour
     private GameObject bucket;
     [SerializeField]
     private Sprite bucketWithWater;
+    [SerializeField]
+    private GameObject maruta;
+    [SerializeField]
+    private GameObject backGround;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +26,18 @@ public class Kawa : MonoBehaviour
     void Update()
     {
         if(charaCtl.item!=null){
-            if(isRiverTouching&&charaCtl.item.ItemType==Items.Bucket&&Input.GetKeyDown(KeyCode.Space)){
-            bucket.GetComponent<SpriteRenderer>().sprite=bucketWithWater;
-        }
+            if(isRiverTouching&&Input.GetKeyDown(KeyCode.Space)){
+                switch(charaCtl.item.ItemType){
+                    case Items.Bucket:
+                        bucket.GetComponent<SpriteRenderer>().sprite=bucketWithWater;
+                        break;
+                    case Items.Maruta:
+                        maruta.SetActive(true);
+                        backGround.GetComponent<BoxCollider2D>().enabled=false;
+                        break;
+                }
+            }
+
         }
     }
 
