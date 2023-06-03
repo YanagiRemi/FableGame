@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     public GameObject character;
     public float yOffset;
     private bool isItemGetting;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,6 @@ public class Item : MonoBehaviour
         if(isItemGetting){
             transform.position=character.transform.position+Vector3.up*yOffset;
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

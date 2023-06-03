@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterCtl : MonoBehaviour
+public class CharaCtl : MonoBehaviour
 {
     public float moveSpeed=1;
     public float jumpSpeed=3;
@@ -11,7 +11,11 @@ public class CharacterCtl : MonoBehaviour
     private SpriteRenderer spRenderer;
     [SerializeField]
     private bool isJumping;
-    public string item;
+    [SerializeField]
+    private bool isItemTouching;
+    public GameObject bucket;
+    public float yOffset;
+    private bool isItemGetting;
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +45,32 @@ public class CharacterCtl : MonoBehaviour
             rb2d.AddForce(Vector2.up*jumpSpeed);
             isJumping=true;
         }
+
+        if(!isItemGetting && isItemTouching && Input.GetKeyDown(KeyCode.Return)){
+            bucket.transform.position=transform.position+Vector3.up*yOffset;
+            isItemGetting=true;
+        }
+        if(isItemGetting){
+            bucket.transform.position=transform.position+Vector3.up*yOffset;
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        isJumping=false;
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("Ground")){
+            isJumping=false;
+        }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.CompareTag("Bucket")){
+            isItemTouching=true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if(collision.gameObject.CompareTag("Bucket")){
+            isItemTouching=false;
+        }
+    }
+
 }
