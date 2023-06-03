@@ -13,4 +13,5 @@ public enum Items
 {
     Bucket,
     Maruta,
+    WoodenBoard,
 }

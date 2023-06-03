@@ -18,6 +18,7 @@ public class CharaCtl : MonoBehaviour
     public float xOffset;
     public float yOffset;
     private bool isItemGetting;
+    [SerializeField]
     private ItemObj collisionItem;
     public ItemObj item;
     Animator animator;
@@ -63,7 +64,7 @@ public class CharaCtl : MonoBehaviour
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
             isItemGetting=true;
             item = collisionItem;
-            // Debug.Log(item.ItemType);
+            itemObject.GetComponent<BoxCollider2D>().enabled=false;
         }
         if(isItemGetting){
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
@@ -71,6 +72,7 @@ public class CharaCtl : MonoBehaviour
 
         if(isItemGetting && Input.GetKeyDown(KeyCode.RightShift)){
             itemObject.transform.position=transform.position+Vector3.right*xOffset;
+            itemObject.GetComponent<BoxCollider2D>().enabled=true;
             isItemGetting=false;
             item=null; 
         }
@@ -83,14 +85,18 @@ public class CharaCtl : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        collisionObject=collision.gameObject;
-        isItemTouching=true;
-        collisionItem = collision.GetComponent<ItemObj>();
+        if(!collision.gameObject.CompareTag("Ground")){
+            collisionObject=collision.gameObject;
+            isItemTouching=true;
+            collisionItem = collision.GetComponent<ItemObj>();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
+        if(!collision.gameObject.CompareTag("Ground")){
             isItemTouching=false;
             collisionItem = null;
+        }
     }
 
 }
