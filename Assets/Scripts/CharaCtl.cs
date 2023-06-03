@@ -16,11 +16,15 @@ public class CharaCtl : MonoBehaviour
     public GameObject bucket;
     public float yOffset;
     private bool isItemGetting;
+    ItemObj collisionItem;
+    ItemObj item;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d=GetComponent<Rigidbody2D>();
+        // animator.SetBool("IsRun", false);
+        rb2d =GetComponent<Rigidbody2D>();
         spRenderer=GetComponent<SpriteRenderer>();
     }
 
@@ -28,7 +32,7 @@ public class CharaCtl : MonoBehaviour
     void Update()
     {
         x=Input.GetAxisRaw("Horizontal"); //左-1,右+1,なにもしない0
-        
+
         //キャラクターの向きを変える
         if(x>0){
             spRenderer.flipX=true;
@@ -37,18 +41,26 @@ public class CharaCtl : MonoBehaviour
         }
         //キャラクターを移動させる
         if(isJumping==false){
-            rb2d.AddForce(Vector2.right * x * moveSpeed);
+            rb2d.velocity = Vector2.right * x * moveSpeed;
+            //rb2d.AddForce(Vector2.right * x * moveSpeed);
         }
-    
+        else
+        {
+            rb2d.velocity = new Vector2(x * moveSpeed / 2f, rb2d.velocity.y);
+        }
+
         //キャラクターをジャンプさせる
-        if(Input.GetButtonDown("Jump")&&!isJumping){
+        if (Input.GetButtonDown("Jump")&&!isJumping){
             rb2d.AddForce(Vector2.up*jumpSpeed);
             isJumping=true;
+            Debug.Log("Jump");
         }
 
         if(!isItemGetting && isItemTouching && Input.GetKeyDown(KeyCode.Return)){
             bucket.transform.position=transform.position+Vector3.up*yOffset;
             isItemGetting=true;
+            item = collisionItem;
+            // Debug.Log(item.ItemType);
         }
         if(isItemGetting){
             bucket.transform.position=transform.position+Vector3.up*yOffset;
@@ -64,12 +76,14 @@ public class CharaCtl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.CompareTag("Bucket")){
             isItemTouching=true;
+            collisionItem = collision.GetComponent<ItemObj>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if(collision.gameObject.CompareTag("Bucket")){
             isItemTouching=false;
+            collisionItem = null;
         }
     }
 
