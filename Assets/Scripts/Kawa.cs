@@ -13,7 +13,9 @@ public class Kawa : MonoBehaviour
     [SerializeField]
     private Sprite bucketWithWater;
     [SerializeField]
-    private GameObject maruta;
+    private GameObject logBrige;
+    [SerializeField]
+    private GameObject log;
     [SerializeField]
     private GameObject backGround;
     // Start is called before the first frame update
@@ -31,13 +33,15 @@ public class Kawa : MonoBehaviour
                     case Items.Bucket:
                         bucket.GetComponent<SpriteRenderer>().sprite=bucketWithWater;
                         break;
-                    case Items.Maruta:
-                        maruta.SetActive(true);
+                    case Items.Log:
+                        logBrige.SetActive(true);
                         backGround.GetComponent<BoxCollider2D>().enabled=false;
+                        log.SetActive(false);
+                        charaCtl.isItemGetting=false;
+                        charaCtl.item=null;
                         break;
                 }
             }
-
         }
     }
 

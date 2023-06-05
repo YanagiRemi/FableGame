@@ -17,11 +17,25 @@ public class CharaCtl : MonoBehaviour
     public GameObject collisionObject;
     public float xOffset;
     public float yOffset;
-    private bool isItemGetting;
+    public bool isItemGetting;
     [SerializeField]
     private ItemObj collisionItem;
     public ItemObj item;
+    [SerializeField]
+    private GameObject woodenBridge;
+    [SerializeField]
+    private GameObject woodenBridge2;
+    [SerializeField]
+    private GameObject woodenBoard;
+    [SerializeField]
+    private GameObject log;
+    [SerializeField]
+    private GameObject logBrige;
+    [SerializeField]
+    private GameObject logStairs;
     Animator animator;
+    [SerializeField]
+    private GameObject backGround;
  
     // Start is called before the first frame update
     void Start()
@@ -44,7 +58,7 @@ public class CharaCtl : MonoBehaviour
         }
         //キャラクターを移動させる
         if(isJumping==false){
-            rb2d.velocity = Vector2.right * x * moveSpeed;
+            rb2d.velocity = new Vector2(x * moveSpeed / 2f, rb2d.velocity.y);
             //rb2d.AddForce(Vector2.right * x * moveSpeed);
         }
         else
@@ -60,21 +74,34 @@ public class CharaCtl : MonoBehaviour
         }
 
         if(!isItemGetting && isItemTouching && Input.GetKeyDown(KeyCode.Return)){
-            itemObject=collisionObject;
+            item=collisionItem;
+            if(collisionObject==woodenBridge || collisionObject==woodenBridge2){
+                collisionObject.SetActive(false);
+                itemObject=woodenBoard;
+                itemObject.SetActive(true);
+            }else if(collisionObject==logStairs || collisionObject==logBrige){
+                if(collisionObject==logBrige){
+                    backGround.GetComponent<BoxCollider2D>().enabled=true;
+                }
+                collisionObject.SetActive(false);
+                itemObject=log;
+                itemObject.SetActive(true);
+            }else{
+                itemObject=collisionObject;
+            }
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
             isItemGetting=true;
-            item = collisionItem;
-            itemObject.GetComponent<BoxCollider2D>().enabled=false;
+        }else if(isItemGetting && Input.GetKeyDown(KeyCode.Return)){
+            if(spRenderer.flipX==true){
+                itemObject.transform.position=transform.position+Vector3.right*xOffset;
+            }else{
+                itemObject.transform.position=transform.position+Vector3.left*xOffset;
+            }
+            isItemGetting=false;
+            item=null; 
         }
         if(isItemGetting){
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
-        }
-
-        if(isItemGetting && Input.GetKeyDown(KeyCode.RightShift)){
-            itemObject.transform.position=transform.position+Vector3.right*xOffset;
-            itemObject.GetComponent<BoxCollider2D>().enabled=true;
-            isItemGetting=false;
-            item=null; 
         }
     }
 
@@ -85,7 +112,7 @@ public class CharaCtl : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(!collision.gameObject.CompareTag("Ground")){
+        if(!collision.gameObject.CompareTag("Ground") || collision.gameObject==logStairs){
             collisionObject=collision.gameObject;
             isItemTouching=true;
             collisionItem = collision.GetComponent<ItemObj>();
@@ -93,7 +120,7 @@ public class CharaCtl : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if(!collision.gameObject.CompareTag("Ground")){
+        if(!collision.gameObject.CompareTag("Ground") || collision.gameObject==logStairs){
             isItemTouching=false;
             collisionItem = null;
         }

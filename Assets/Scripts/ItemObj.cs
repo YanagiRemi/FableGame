@@ -12,6 +12,6 @@ public class ItemObj : MonoBehaviour
 public enum Items
 {
     Bucket,
-    Maruta,
+    Log,
     WoodenBoard,
 }
