@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7b75a4a353f994d12bd7d1a9a3c76e86
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Kaisei Decol
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0722d1e3a867440fa94661f15f7d1a98, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
