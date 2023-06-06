@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2844150052143118913
 SpriteRenderer:
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 8435312536510258951}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 0e7c84a3424ef470c8638f317b6b5044, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8f754226e44c2465d99b032c890b1168, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

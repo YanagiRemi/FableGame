@@ -454,6 +454,60 @@ MonoBehaviour:
   targetAngle: 45
   emptyBucket: {fileID: 21300000, guid: 79463449243814b90897482f88e73932, type: 3}
   isWatering: 0
+--- !u!1 &253159179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 253159181}
+  - component: {fileID: 253159180}
+  m_Layer: 0
+  m_Name: PigGimmick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &253159180
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253159179}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2a0bb1ab2ec542de9eb4abc1808cf1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &253159181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253159179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1310043864}
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295764103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1194,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &559813920
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 253159181}
+    m_Modifications:
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844150052143118913, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844150052143118913, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 965295389
+      objectReference: {fileID: 0}
+    - target: {fileID: 8435312536510258951, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_Name
+      value: Pig
+      objectReference: {fileID: 0}
+    - target: {fileID: 8435312536510258951, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
 --- !u!1 &654050521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,6 +2734,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4936333, y: 0.42631328}
   m_EdgeRadius: 0
+--- !u!4 &1310043864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2185849321772990514, guid: c8e86b3b5ac5c4e5983dab5482a37cb9, type: 3}
+  m_PrefabInstance: {fileID: 559813920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1311983797
 GameObject:
   m_ObjectHideFlags: 0
