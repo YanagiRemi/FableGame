@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41d9df0b913554124a79f28fbcd35549
+guid: 85d4c97c9aa4c420bb65864d763813fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BrickHouse_0
+      name: StrawHouse-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82d90a0d2958b4dbe86029914c0e507c
-      internalID: 1929516136
+      spriteID: d12c251d36b604822919d7bb62022b5b
+      internalID: 1669443942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BrickHouse_1
+      name: StrawHouse-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,8 +158,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f8b6baadc5b64362a425ef465ba107e
-      internalID: -698366873
+      spriteID: d781d5edf017a41368145ce080111820
+      internalID: 1932215152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrawHouse-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae1c39d2242f4dccaef83a85334fb03
+      internalID: 1785578527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrawHouse-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea31bf0fe4e4d4728973462814d8a68c
+      internalID: 819203809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StrawHouse-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf9c9748af3f49c59bfbcbff9181e19
+      internalID: 548199038
       vertices: []
       indices: 
       edges: []
@@ -175,8 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BrickHouse_0: 1929516136
-      BrickHouse_1: -698366873
+      StrawHouse-Sheet_0: 1669443942
+      StrawHouse-Sheet_1: 1932215152
+      StrawHouse-Sheet_2: 1785578527
+      StrawHouse-Sheet_3: 819203809
+      StrawHouse-Sheet_4: 548199038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
