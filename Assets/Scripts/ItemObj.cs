@@ -14,4 +14,8 @@ public enum Items
     Bucket,
     Log,
     WoodenBoard,
+    Ax,
+    Nabe,
+    Knife,
+    Hammer,
 }
