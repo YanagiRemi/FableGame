@@ -25,8 +25,8 @@ public class Chimney : MonoBehaviour
     [SerializeField]
     private bool isWatering;
     private Renderer renderer;
-    [SerializeField]
-    private GameObject pigGimmick1;
+    public GameObject pigGimmick1;
+    private bool hasEnterdBrickHouse=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class Chimney : MonoBehaviour
     void Update()
     {
         if(isChimneyTouching&&Input.GetKeyDown(KeyCode.Space)){
-            if(!isBurning){
+            if(!isBurning&&!hasEnterdBrickHouse){
                 renderer.sortingLayerName="Dafault";
                 if(charaCtl.item!=null){
                     charaCtl.itemObject.GetComponent<Renderer>().sortingLayerName="Default";
@@ -52,12 +52,13 @@ public class Chimney : MonoBehaviour
                 bucket.transform.position = new Vector2(8.4f,0.8f);
             }
         }
-        if(!isBurning){
+        if(!isBurning&&!hasEnterdBrickHouse){
             if(wolf.transform.position.y <= -2.0f && wolf.activeSelf){
                     wolf.SetActive(false);
                     if(charaCtl.item!=null){
                         charaCtl.itemObject.SetActive(false);
                     }
+                    hasEnterdBrickHouse=true;
                     pigGimmick1.SetActive(true);
             }
         }else if(isWatering){
