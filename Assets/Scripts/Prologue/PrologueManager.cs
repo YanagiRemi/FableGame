@@ -18,6 +18,7 @@ public class PrologueManager : MonoBehaviour
         {
             isStart = true;
             FadeManager.Instance.LoadScene(nextSceneName, 1f);
+            SoundManager.Instance.PlaySE(SE.BtnEnter);
         }
     }
 }

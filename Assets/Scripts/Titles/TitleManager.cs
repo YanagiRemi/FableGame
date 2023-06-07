@@ -6,6 +6,11 @@ public class TitleManager : MonoBehaviour
 {
     bool isStart;
 
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM(BGM.Title);
+    }
+
     void Update()
     {
         if (isStart)
@@ -17,6 +22,7 @@ public class TitleManager : MonoBehaviour
         {
             isStart = true;
             FadeManager.Instance.LoadScene("Prologue", 1f);
+            SoundManager.Instance.PlaySE(SE.BtnEnter);
         }
     }
 }
