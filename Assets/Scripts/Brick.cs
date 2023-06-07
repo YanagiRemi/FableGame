@@ -11,8 +11,9 @@ public class Brick : MonoBehaviour
     [SerializeField]
     private CharaCtl charaCtl;
     [SerializeField]
-    private Sprite brickHouse;
-    
+    private Sprite brokenBrickHouseSprite;
+    [SerializeField]
+    private GameObject brickHouse;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class Brick : MonoBehaviour
             if(isBrickTouching&&Input.GetKeyDown(KeyCode.Space)){
                 switch(charaCtl.item.ItemType){
                     case Items.Hammer:
-                        GetComponent<SpriteRenderer>().sprite=brickHouse;
+                        brickHouse.GetComponent<SpriteRenderer>().sprite=brokenBrickHouseSprite;
                         brick.SetActive(true);
                     break;
                 }

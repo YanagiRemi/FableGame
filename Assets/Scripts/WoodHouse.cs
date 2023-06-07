@@ -30,7 +30,7 @@ public class WoodHouse : MonoBehaviour
             if(isWoodHouseTouching&&Input.GetKeyDown(KeyCode.Space)){
                 if(isBrokenHouse){
                     wolf.GetComponent<Rigidbody2D>().gravityScale=0;
-                    wolf.transform.position=new Vector2(-2.75f,-2.81f);
+                    wolf.transform.position=new Vector2(-1.38f,-1.33f);
                     StartCoroutine(WaitAndHideWolf());
                 }else if(charaCtl.item!=null){
                     switch(charaCtl.item.ItemType){

@@ -36,7 +36,6 @@ public class Kawa : MonoBehaviour
                         break;
                     case Items.Log:
                         logBrige.SetActive(true);
-                        backGround.GetComponent<BoxCollider2D>().enabled=false;
                         log.SetActive(false);
                         charaCtl.isItemGetting=false;
                         charaCtl.item=null;
