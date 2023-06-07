@@ -16,6 +16,7 @@ public class TextDisplay : MonoBehaviour
     public GameObject brick;
     public GameObject nabe;
     public Sprite fireNabe;
+    public GameObject logBridge;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +31,11 @@ public class TextDisplay : MonoBehaviour
         }else if(bucket.GetComponent<SpriteRenderer>().sprite!=bucketWithWater && chimney.isBurning){
             textComponent.text="ヒント:バケツに水を汲もう";
         }else if(!woodenBridge2.activeSelf){
-            textComponent.text="ヒント:家と家の間を渡れる橋を作ろう";
+            textComponent.text="ヒント:家と家の間を渡れる橋を作ろう。木の家の屋根の上に使えそうなものがあるね";
         }else if(chimney.isBurning){
             textComponent.text="ヒント:ブタが仕掛けた煙突の中の熱い鍋をどうにかしたいな。。";
+        }else if(!logBridge.activeSelf && !ax.activeSelf){
+            textComponent.text="ヒント:川の上に橋を作って渡ろう。丸太で作れそうだ";
         }else if(!ax.activeSelf){
             textComponent.text="ヒント:木に縛り付けられたオノのロープを切ろう";
         }else if(!woodhouse.isBrokenHouse){
@@ -40,7 +43,7 @@ public class TextDisplay : MonoBehaviour
         }else if(!brick.activeSelf){
             textComponent.text="ヒント:レンガの家にヒビが入っている部分があるね。ハンマーで壊そう";
         }else if(nabe.GetComponent<SpriteRenderer>().sprite!=fireNabe){
-            textComponent.text="ヒント:藁の家は火をつけて怖そう。火は石と鉄で起こせそうだ。";
+            textComponent.text="ヒント:藁の家は火をつけて壊そう。火は石と鉄で起こせそうだ。";
         }
     }
 }
