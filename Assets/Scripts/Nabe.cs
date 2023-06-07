@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ax : MonoBehaviour
+public class Nabe : MonoBehaviour
 {
-    [SerializeField]
-    private bool isAxTouching;
-    [SerializeField]
-    private GameObject ax;
+   [SerializeField]
+    private bool isNabeTouching;
     [SerializeField]
     private CharaCtl charaCtl;
     [SerializeField]
-    private Sprite tree;
+    private Sprite fireNabe;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +20,10 @@ public class Ax : MonoBehaviour
     void Update()
     {
         if(charaCtl.item!=null){
-            if(isAxTouching&&Input.GetKeyDown(KeyCode.Space)){
+            if(isNabeTouching&&Input.GetKeyDown(KeyCode.Space)){
                 switch(charaCtl.item.ItemType){
-                    case Items.Knife:
-                        GetComponent<SpriteRenderer>().sprite=tree;
-                        ax.SetActive(true);
+                    case Items.Brick:
+                        GetComponent<SpriteRenderer>().sprite=fireNabe;
                     break;
                 }
             }
@@ -34,10 +31,10 @@ public class Ax : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
-        isAxTouching=true;
+        isNabeTouching=true;
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
-        isAxTouching=false;
+        isNabeTouching=false;
     }
 }

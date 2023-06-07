@@ -12,10 +12,13 @@ public class ItemObj : MonoBehaviour
 public enum Items
 {
     Bucket,
+    BucketWithWater,
     Log,
     WoodenBoard,
     Ax,
     Nabe,
+    FireNabe,
     Knife,
     Hammer,
+    Brick,
 }

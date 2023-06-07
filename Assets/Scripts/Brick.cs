@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ax : MonoBehaviour
+public class Brick : MonoBehaviour
 {
     [SerializeField]
-    private bool isAxTouching;
+    private bool isBrickTouching;
     [SerializeField]
-    private GameObject ax;
+    private GameObject brick;
     [SerializeField]
     private CharaCtl charaCtl;
     [SerializeField]
-    private Sprite tree;
+    private Sprite brickhouse;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +22,11 @@ public class Ax : MonoBehaviour
     void Update()
     {
         if(charaCtl.item!=null){
-            if(isAxTouching&&Input.GetKeyDown(KeyCode.Space)){
+            if(isBrickTouching&&Input.GetKeyDown(KeyCode.Space)){
                 switch(charaCtl.item.ItemType){
-                    case Items.Knife:
-                        GetComponent<SpriteRenderer>().sprite=tree;
-                        ax.SetActive(true);
+                    case Items.Hammer:
+                        GetComponent<SpriteRenderer>().sprite=brickhouse;
+                        brick.SetActive(true);
                     break;
                 }
             }
@@ -34,10 +34,10 @@ public class Ax : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
-        isAxTouching=true;
+        isBrickTouching=true;
     }
 
-    private void OnTriggerExit2D(Collider2D collider) {
-        isAxTouching=false;
+    private void OnTriggerExit2D(Collider2D collider){
+        isBrickTouching=false;
     }
 }

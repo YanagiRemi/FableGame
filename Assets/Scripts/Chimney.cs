@@ -25,6 +25,8 @@ public class Chimney : MonoBehaviour
     [SerializeField]
     private bool isWatering;
     private Renderer renderer;
+    [SerializeField]
+    private GameObject pigGimmick1;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,7 @@ public class Chimney : MonoBehaviour
                 }
                 wolf.transform.position = new Vector2(7.8f,1f);
                 GetComponent<EdgeCollider2D>().enabled=false;
-            }else if(charaCtl.item.ItemType==Items.Bucket){
+            }else if(charaCtl!=null && charaCtl.item.ItemType==Items.Bucket){
                 isWatering=true;
                 charaCtl.isItemGetting=false;
                 charaCtl.item=null;
@@ -56,6 +58,7 @@ public class Chimney : MonoBehaviour
                     if(charaCtl.item!=null){
                         charaCtl.itemObject.SetActive(false);
                     }
+                    pigGimmick1.SetActive(true);
             }
         }else if(isWatering){
                 angle += rotateSpeed * Time.deltaTime;
