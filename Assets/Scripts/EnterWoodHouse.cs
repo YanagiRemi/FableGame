@@ -23,7 +23,7 @@ public class EnterWoodHouse : MonoBehaviour
     }
 
     private void ExitingWoodHouse(){
-        wolf.transform.position=new Vector2(-1.38f,-1.33f);
+        wolf.transform.localPosition=new Vector2(1.38f,-1.69f);
         wolf.SetActive(true);
         if(charaCtl.item!=null){
             charaCtl.itemObject.SetActive(true);
