@@ -10,7 +10,7 @@ public class WoodHouse : MonoBehaviour
     private CharaCtl charaCtl;
     [SerializeField]
     private Sprite brokenWoodHouse;
-    private bool isBrokenHouse=false;
+    public bool isBrokenHouse=false;
     [SerializeField]
     private GameObject wolf;
     [SerializeField]

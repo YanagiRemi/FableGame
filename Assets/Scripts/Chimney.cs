@@ -8,8 +8,7 @@ public class Chimney : MonoBehaviour
     private CharaCtl charaCtl;
     [SerializeField]
     private GameObject wolf;
-    [SerializeField]
-    private bool isBurning=true;
+    public bool isBurning=true;
     private Rigidbody2D rb2d;
     private bool isChimneyTouching;
     [SerializeField]

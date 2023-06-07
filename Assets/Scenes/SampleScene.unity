@@ -4264,6 +4264,7 @@ MonoBehaviour:
   isWoodHouseTouching: 0
   charaCtl: {fileID: 1164111058}
   brokenWoodHouse: {fileID: -1370869559, guid: c077fb6080b88495b996462017bfdc90, type: 3}
+  isBrokenHouse: 0
   wolf: {fileID: 1164111051}
   pigGimmick2: {fileID: 1094467668}
   waitTime: 1
@@ -4331,7 +4332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1170429892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4891,8 +4892,13 @@ MonoBehaviour:
   logStairs: {fileID: 1071775967}
   bucket: {fileID: 2067083810}
   bucketWithWater: {fileID: 21300000, guid: 7fea99e2bf83e47f8a2e5b04148f72e5, type: 3}
-  woodenBridge1: {fileID: 1170429891}
   woodenBridge2: {fileID: 1792016364}
+  chimney: {fileID: 64898098}
+  ax: {fileID: 654050521}
+  woodhouse: {fileID: 1165905273}
+  brick: {fileID: 2139300890}
+  nabe: {fileID: 295764103}
+  fireNabe: {fileID: 21300000, guid: 10f8f5aeb8b124c53b9cb2158987c8cf, type: 3}
 --- !u!1 &1586468002
 GameObject:
   m_ObjectHideFlags: 0
