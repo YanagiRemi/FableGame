@@ -32,6 +32,7 @@ public class Kawa : MonoBehaviour
                 switch(charaCtl.item.ItemType){
                     case Items.Bucket:
                         bucket.GetComponent<SpriteRenderer>().sprite=bucketWithWater;
+                        bucket.GetComponent<ItemObj>().ItemType=Items.BucketWithWater;
                         break;
                     case Items.Log:
                         logBrige.SetActive(true);

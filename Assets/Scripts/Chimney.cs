@@ -45,11 +45,15 @@ public class Chimney : MonoBehaviour
                 }
                 wolf.transform.position = new Vector2(7.8f,1f);
                 GetComponent<EdgeCollider2D>().enabled=false;
-            }else if(charaCtl!=null && charaCtl.item.ItemType==Items.Bucket){
-                isWatering=true;
-                charaCtl.isItemGetting=false;
-                charaCtl.item=null;
-                bucket.transform.position = new Vector2(8.4f,0.8f);
+            }else if(charaCtl.item!=null){
+                switch(charaCtl.item.ItemType){
+                    case Items.BucketWithWater:
+                        isWatering=true;
+                        charaCtl.isItemGetting=false;
+                        charaCtl.item=null;
+                        bucket.transform.position = new Vector2(8.4f,0.8f);
+                        break;
+                }
             }
         }
         if(!isBurning&&!hasEnterdBrickHouse){

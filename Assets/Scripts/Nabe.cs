@@ -24,6 +24,7 @@ public class Nabe : MonoBehaviour
                 switch(charaCtl.item.ItemType){
                     case Items.Brick:
                         GetComponent<SpriteRenderer>().sprite=fireNabe;
+                        GetComponent<ItemObj>().ItemType=Items.FireNabe;
                     break;
                 }
             }

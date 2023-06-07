@@ -6,7 +6,7 @@ public class ItemObj : MonoBehaviour
 {
     [SerializeField] Items itemType;
 
-    public Items ItemType { get => itemType;}
+    public Items ItemType { get => itemType; set => itemType = value;}
 }
 
 public enum Items

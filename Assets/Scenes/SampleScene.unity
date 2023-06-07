@@ -517,7 +517,7 @@ MonoBehaviour:
   isBrickTouching: 0
   brick: {fileID: 2139300890}
   charaCtl: {fileID: 1164111058}
-  brickHouse: {fileID: 0}
+  brickHouse: {fileID: 1929516136, guid: 41d9df0b913554124a79f28fbcd35549, type: 3}
 --- !u!1 &253159179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83527bd8271ca4213a6cdb3a7cb8b2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 2
 --- !u!61 &395862193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2502,7 +2502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &654050522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,8 +4334,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356784943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: -2.9, z: 0}
-  m_LocalScale: {x: 0.11886159, y: 0.6187472, z: 1}
+  m_LocalPosition: {x: -6.8481, y: -2.9, z: 0}
+  m_LocalScale: {x: 0.10501421, y: 0.6187472, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5683,7 +5683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146765424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.74, y: -3.33, z: 0}
+  m_LocalPosition: {x: -1.85, y: -3.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
