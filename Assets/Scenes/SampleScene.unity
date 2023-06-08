@@ -3337,7 +3337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1071775970
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4525,7 +4525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1170429894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5117,10 +5117,11 @@ MonoBehaviour:
   fireNabe: {fileID: 21300000, guid: 10f8f5aeb8b124c53b9cb2158987c8cf, type: 3}
   logBridge: {fileID: 395862189}
   brickHint: 0
-  waitTime: 1
+  waitTime: 2
   BurnStrawHouse: {fileID: 2145934672}
   strawHint: 0
   woodHint: 0
+  startHint: 0
   woodHouse: {fileID: 1165905273}
   burnStrawHouse: {fileID: 2145934672}
 --- !u!1 &1586468002
@@ -5371,7 +5372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1792016367
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5895,7 +5896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067083810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.65, y: -1.77, z: -1.4}
+  m_LocalPosition: {x: 11.05, y: -1.6, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
