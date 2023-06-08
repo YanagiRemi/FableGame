@@ -28,7 +28,7 @@ public class TextDisplay : MonoBehaviour
     public bool endHint=false;
     public WoodHouse woodHouse;
     public BurnStrawHouse burnStrawHouse;
-
+    bool isClear;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,50 +38,53 @@ public class TextDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isClear)
+        {
+            return;
+        }
         if(!startHint){
-            textComponent.text="まずはレンガの家の煙突に入れるようにしよう。\n煙突の中に熱々の鍋を用意していたから注意が必要だ。。";
+            textComponent.text="まずはレンガの家の煙突に入れるようにしよう。";
             StartCoroutine(StartWait());
-        }else if(bucket.GetComponent<SpriteRenderer>().sprite!=bucketWithWater && chimney.isBurning){
-            textComponent.text="ヒント:まずは煙突の中の熱々の鍋の火を消せるものを用意しよう";
         }else if(!logStairs.activeSelf&&chimney.isBurning){
-            textComponent.text="ヒント:わらの家の左側に階段をつくって登れるようにしよう。丸太が使えそうだ。";
+            textComponent.text= "木の家の左側に丸太を積み上げれば階段が作れそうだ";
         }else if(!woodenBridge2.activeSelf){
-            textComponent.text="ヒント:わらの家とレンガの家の間が渡れない。木の家の屋根の上に使えそうなものがあったはず。。";
+            textComponent.text="レンガの家まで渡れない。屋根の上の板を使えば届くかな？";
         }else if(!chimney.isWatering&&chimney.isBurning){
-            textComponent.text="ヒント:ブタが仕掛けた煙突の中の熱い鍋をどうにかしたいな。。";
+            textComponent.text="熱い鍋をどうにかしたいな...川の水を入れられれば...";
         }else if(chimney.isWatering){
-            textComponent.text="煙突の中に水を入れている。";
+            textComponent.text="こうすればいいんじゃないか？";
         }else if(!chimney.isBurning && !chimney.hasEnterdBrickHouse){
-            textComponent.text="ヒント:これで煙突の中の鍋の火が消えたようだ。煙突に入ろう。";
+            textComponent.text="これで煙突の中の鍋の火が消えた！中に入ろう";
         }else if(!brickHint&&chimney.hasEnterdBrickHouse){
-            textComponent.text="レンガの家のブタは木の家に逃げたようだ。ナイフと鉄のナベを家の中で見つけた。";
+            textComponent.text="子ブタが木の家に逃げちゃった...";
             StartCoroutine(Wait1());
         }else if(!middleHint){
             textComponent.text="次は木の家に入れるようにしよう。なにかでドアを壊せないかな。";
             StartCoroutine(MiddleWait());
         }else if(!logBridge.activeSelf && !ax.activeSelf){
-            textComponent.text="ヒント:川が渡れないから橋を作ろう。さっきの丸太で作れそうだ。";
+            textComponent.text="オノを取りに行きたいけど川が渡れない...橋になる丸太でもあれば...";
         }else if(!ax.activeSelf){
-            textComponent.text="ヒント:木に縛り付けられたオノのロープを何かで切ろう。";
+            textComponent.text="ロープでオノが取れないな...切れるものがあれば...";
         }else if(!woodhouse.isBrokenHouse){
-            textComponent.text="ヒント:木の家のドアを壊したいな。。";
+            textComponent.text="このオノであのドアを...";
         }else if(!woodHouse.hasEnteredWoodHouse&&woodhouse.isBrokenHouse){
-            textComponent.text="ヒント:木の家に入ろう";
+            textComponent.text="やったー家に入れるぞ！";
         }else if(!woodHint&&woodHouse.hasEnteredWoodHouse){
-            textComponent.text="ヒント:木の家のブタはわらの家に逃げたようだ。ハンマーを家の中で見つけた。";
+            textComponent.text="たま子ブタに逃げられちゃった...";
             StartCoroutine(Wait2());
         }else if(!endHint){
-            textComponent.text="次はわらの家に入れるようにしよう。なにかで燃やせないかな。";
+            textComponent.text="わらは燃えやすいからなぁ...火があれば...";
             StartCoroutine(EndWait());
         }else if(!brick.activeSelf){
-            textComponent.text="ヒント:レンガの家にヒビが入っている部分があるね。なにかで叩いたらレンガが取れそうだ。";
+            textComponent.text="レンガの家にヒビが入っている。なにかで叩いたらレンガが取れそうだ。";
         }else if(nabe.GetComponent<SpriteRenderer>().sprite!=fireNabe){
-            textComponent.text="ヒント:わらの家は火をつけて壊そう。火は石と鉄で起こせそうだ。使えるものはないかな。";
+            textComponent.text="火は石と鉄でおこせそうだ。使えるものはないかな。";
         }else if(!burnStrawHouse.hasBurnedStrawHouse&&!burnStrawHouse.isStrawBurning){
-            textComponent.text="ヒント:鉄のナベに火がついた。ナベの火をわらの家に引火させよう。";
+            textComponent.text="鉄のナベに火がついた!!!";
         }else if(burnStrawHouse.isStrawBurning){
-            textComponent.text="わらが燃えている。";
+            textComponent.text="しばらく待てば...";
         }else if(!strawHint){
+            isClear = true;
             textComponent.text="やったー！ごちそうだ！いただきまーす！";
             StartCoroutine(Wait3());
         }
