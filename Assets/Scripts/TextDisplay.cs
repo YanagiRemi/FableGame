@@ -54,7 +54,7 @@ public class TextDisplay : MonoBehaviour
         }else if(!chimney.isBurning && !chimney.hasEnterdBrickHouse){
             textComponent.text="ヒント:これで煙突の中の鍋の火が消えたようだ。煙突に入ろう。";
         }else if(!brickHint&&chimney.hasEnterdBrickHouse){
-            textComponent.text="わらの家のブタは木の家に逃げた。ナイフと鉄のナベを家の中で見つけた。";
+            textComponent.text="レンガの家のブタは木の家に逃げたようだ。ナイフと鉄のナベを家の中で見つけた。";
             StartCoroutine(Wait1());
         }else if(!middleHint){
             textComponent.text="次は木の家に入れるようにしよう。なにかでドアを壊せないかな。";
@@ -68,7 +68,7 @@ public class TextDisplay : MonoBehaviour
         }else if(!woodHouse.hasEnteredWoodHouse&&woodhouse.isBrokenHouse){
             textComponent.text="ヒント:木の家に入ろう";
         }else if(!woodHint&&woodHouse.hasEnteredWoodHouse){
-            textComponent.text="ヒント:木の家のブタはわらの家に逃げた。ハンマーを家の中で見つけた。";
+            textComponent.text="ヒント:木の家のブタはわらの家に逃げたようだ。ハンマーを家の中で見つけた。";
             StartCoroutine(Wait2());
         }else if(!endHint){
             textComponent.text="次はわらの家に入れるようにしよう。なにかで燃やせないかな。";
