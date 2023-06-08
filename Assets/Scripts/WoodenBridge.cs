@@ -30,6 +30,7 @@ public class WoodenBridge : MonoBehaviour
                         charaCtl.item=null;
                         break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }
     }

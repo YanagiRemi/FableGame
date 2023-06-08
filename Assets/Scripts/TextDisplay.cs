@@ -70,7 +70,7 @@ public class TextDisplay : MonoBehaviour
         }else if(!woodHouse.hasEnteredWoodHouse&&woodhouse.isBrokenHouse){
             textComponent.text="やったー家に入れるぞ！";
         }else if(!woodHint&&woodHouse.hasEnteredWoodHouse){
-            textComponent.text="たま子ブタに逃げられちゃった...";
+            textComponent.text="また子ブタに逃げられちゃった...";
             StartCoroutine(Wait2());
         }else if(!endHint){
             textComponent.text="わらは燃えやすいからなぁ...火があれば...";

@@ -28,20 +28,21 @@ public class WoodHouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if(isWoodHouseTouching&&Input.GetKeyDown(KeyCode.Space)){
-                if(!hasEnteredWoodHouse && isBrokenHouse){
-                    wolf.GetComponent<Rigidbody2D>().gravityScale=0;
-                    wolf.transform.localPosition=new Vector2(1.38f,-1.69f);
-                    StartCoroutine(WaitAndHideWolf());
-                }else if(charaCtl.item!=null){
-                    switch(charaCtl.item.ItemType){
-                        case Items.Ax:
-                            GetComponent<SpriteRenderer>().sprite=brokenWoodHouse;
-                            isBrokenHouse=true;
-                            break;
-                    }
+        if(isWoodHouseTouching&&Input.GetKeyDown(KeyCode.Space)){
+            if(!hasEnteredWoodHouse && isBrokenHouse){
+                wolf.GetComponent<Rigidbody2D>().gravityScale=0;
+                wolf.transform.localPosition=new Vector2(1.38f,-1.69f);
+                StartCoroutine(WaitAndHideWolf());
+            }else if(charaCtl.item!=null){
+                switch(charaCtl.item.ItemType){
+                    case Items.Ax:
+                        GetComponent<SpriteRenderer>().sprite=brokenWoodHouse;
+                        isBrokenHouse=true;
+                        SoundManager.Instance.PlaySE(SE.BtnItemGet);
+                        break;
                 }
             }
+        }
     }
     IEnumerator WaitAndHideWolf(){
         yield return new WaitForSeconds(waitTime);

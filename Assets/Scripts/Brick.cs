@@ -31,6 +31,7 @@ public class Brick : MonoBehaviour
                         brick.SetActive(true);
                     break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }
     }

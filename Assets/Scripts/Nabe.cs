@@ -27,6 +27,7 @@ public class Nabe : MonoBehaviour
                         GetComponent<ItemObj>().ItemType=Items.FireNabe;
                     break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }
     }

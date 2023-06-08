@@ -27,6 +27,7 @@ public class BurnStrawHouse : MonoBehaviour
                         isStrawBurning=true;
                     break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }
     }

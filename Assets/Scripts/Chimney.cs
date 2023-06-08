@@ -53,6 +53,7 @@ public class Chimney : MonoBehaviour
                         break;
                 }
             }
+            SoundManager.Instance.PlaySE(SE.BtnItemGet);
         }
         if(!isBurning&&!hasEnterdBrickHouse){
             if(wolf.transform.localPosition.y <= -1.0f && wolf.activeSelf){

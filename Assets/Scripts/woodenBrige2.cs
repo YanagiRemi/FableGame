@@ -23,6 +23,7 @@ public class WoodenBridge2 : WoodenBridge
                         charaCtl.item=null;
                         break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }else{
             if(isRoofEdgeTouching&&Input.GetKeyDown(KeyCode.Space)&&woodenBridge.activeSelf){

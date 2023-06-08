@@ -41,6 +41,7 @@ public class Kawa : MonoBehaviour
                         charaCtl.item=null;
                         break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }
     }

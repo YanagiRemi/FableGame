@@ -29,6 +29,7 @@ public class Ax : MonoBehaviour
                         ax.SetActive(true);
                     break;
                 }
+                SoundManager.Instance.PlaySE(SE.BtnItemGet);
             }
         }
     }
