@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         Vector3 newPosition = transform.position;
-        newPosition.x = target.position.x;
+        newPosition.x = Mathf.Clamp(target.position.x, -5, 6);
         transform.position = newPosition;
     }
 }

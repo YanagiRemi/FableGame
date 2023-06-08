@@ -36,7 +36,11 @@ public class CharaCtl : MonoBehaviour
     Animator animator;
     [SerializeField]
     private GameObject backGround;
- 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +107,10 @@ public class CharaCtl : MonoBehaviour
         if(isItemGetting){
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
         }
+    }
+    private void LateUpdate()
+    {
+        animator.SetBool("IsWalk", x != 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

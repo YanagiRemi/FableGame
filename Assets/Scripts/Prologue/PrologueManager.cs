@@ -6,9 +6,20 @@ public class PrologueManager : MonoBehaviour
 {
     [SerializeField] string nextSceneName;
     bool isStart;
+    bool canInput;
+
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(1f);
+        canInput = true;
+    }
 
     void Update()
     {
+        if (!canInput)
+        {
+            return;
+        }
         if (isStart)
         {
             return;
