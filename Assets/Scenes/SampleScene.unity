@@ -3253,7 +3253,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.15607314, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3264,7 +3264,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6878537, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &946297387
 SpriteRenderer:
@@ -4525,7 +4525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1170429894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5117,11 +5117,14 @@ MonoBehaviour:
   fireNabe: {fileID: 21300000, guid: 10f8f5aeb8b124c53b9cb2158987c8cf, type: 3}
   logBridge: {fileID: 395862189}
   brickHint: 0
-  waitTime: 2
+  startWaitTime: 4
+  waitTime: 4
   BurnStrawHouse: {fileID: 2145934672}
   strawHint: 0
   woodHint: 0
   startHint: 0
+  middleHint: 0
+  endHint: 0
   woodHouse: {fileID: 1165905273}
   burnStrawHouse: {fileID: 2145934672}
 --- !u!1 &1586468002
@@ -5258,7 +5261,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.45526123, y: -0.013501167}
+  m_Offset: {x: -0.57816887, y: 0.0684371}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5269,7 +5272,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6404982, y: 0.7029729}
+  m_Size: {x: 1.8863134, y: 0.8668494}
   m_EdgeRadius: 0
 --- !u!1 &1636332021
 GameObject:

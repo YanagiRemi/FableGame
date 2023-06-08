@@ -18,11 +18,14 @@ public class TextDisplay : MonoBehaviour
     public Sprite fireNabe;
     public GameObject logBridge;
     public bool brickHint=false;
-    public float waitTime=3.0f;
+    public float startWaitTime=4.0f;
+    public float waitTime=4.0f;
     public BurnStrawHouse BurnStrawHouse;
     public bool strawHint=false;
     public bool woodHint=false;
     public bool startHint=false;
+    public bool middleHint=false;
+    public bool endHint=false;
     public WoodHouse woodHouse;
     public BurnStrawHouse burnStrawHouse;
 
@@ -36,7 +39,7 @@ public class TextDisplay : MonoBehaviour
     void Update()
     {
         if(!startHint){
-            textComponent.text="ヒント:まずはレンガの家の煙突に入れるようにしよう。窓からうかがった時、ブタが煙突の中に熱々の鍋を用意していたから注意が必要だ。。";
+            textComponent.text="ヒント:まずはレンガの家の煙突に入れるようにしよう。\n煙突の中に熱々の鍋を用意していたから注意が必要だ。。";
             StartCoroutine(StartWait());
         }else if(bucket.GetComponent<SpriteRenderer>().sprite!=bucketWithWater && chimney.isBurning){
             textComponent.text="ヒント:まずは煙突の中の熱々の鍋の火を消せるものを用意しよう";
@@ -53,19 +56,25 @@ public class TextDisplay : MonoBehaviour
         }else if(!brickHint&&chimney.hasEnterdBrickHouse){
             textComponent.text="ヒント:藁の家のブタは木の家に逃げた。ナイフと鉄のナベを家の中で見つけた。";
             StartCoroutine(Wait1());
+        }else if(!middleHint){
+            textComponent.text="ヒント:次は木の家に入れるようにしよう。なにかでドアを壊せないかな。";
+            StartCoroutine(MiddleWait());
         }else if(!logBridge.activeSelf && !ax.activeSelf){
             textComponent.text="ヒント:川の上が渡れないから橋を作ろう。さっきの丸太で作れそうだ。";
         }else if(!ax.activeSelf){
             textComponent.text="ヒント:木に縛り付けられたオノのロープを何かで切ろう。";
         }else if(!woodhouse.isBrokenHouse){
-            textComponent.text="ヒント:木の家のドアを壊したい。";
+            textComponent.text="ヒント:木の家のドアを壊したいな。。";
         }else if(!woodHouse.hasEnteredWoodHouse&&woodhouse.isBrokenHouse){
             textComponent.text="ヒント:木の家に入ろう";
         }else if(!woodHint&&woodHouse.hasEnteredWoodHouse){
             textComponent.text="ヒント:木の家のブタは藁の家に逃げた。ハンマーを家の中で見つけた。";
             StartCoroutine(Wait2());
+        }else if(!endHint){
+            textComponent.text="ヒント:次は藁の家に入れるようにしよう。なにかで燃やせないかな。";
+            StartCoroutine(EndWait());
         }else if(!brick.activeSelf){
-            textComponent.text="ヒント:レンガの家にヒビが入っている部分があるね。叩いたらレンガが取れそう";
+            textComponent.text="ヒント:レンガの家にヒビが入っている部分があるね。叩いたらレンガが取れそうだ。";
         }else if(nabe.GetComponent<SpriteRenderer>().sprite!=fireNabe){
             textComponent.text="ヒント:藁の家は火をつけて壊そう。火は石と鉄で起こせそうだ。使えるものはないかな。";
         }else if(!burnStrawHouse.hasBurnedStrawHouse&&!burnStrawHouse.isStrawBurning){
@@ -79,8 +88,18 @@ public class TextDisplay : MonoBehaviour
     }
 
     IEnumerator StartWait(){
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(startWaitTime);
         startHint=true;
+    }
+
+    IEnumerator MiddleWait(){
+        yield return new WaitForSeconds(startWaitTime);
+        middleHint=true;
+    }
+
+    IEnumerator EndWait(){
+        yield return new WaitForSeconds(startWaitTime);
+        endHint=true;
     }
 
     IEnumerator Wait1(){
