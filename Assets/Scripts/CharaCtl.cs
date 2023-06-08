@@ -36,7 +36,8 @@ public class CharaCtl : MonoBehaviour
     Animator animator;
     [SerializeField]
     private GameObject backGround;
-
+    Vector3 defaultPosition;
+    bool isGameOver;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -47,11 +48,28 @@ public class CharaCtl : MonoBehaviour
         // animator.SetBool("IsRun", false);
         rb2d =GetComponent<Rigidbody2D>();
         spRenderer=GetComponent<SpriteRenderer>();
+        defaultPosition = transform.position;
+        SoundManager.Instance.PlayBGM(BGM.Title);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+        if (transform.position.y < -7)
+        {
+            isGameOver = true;
+            FadeManager.Instance.LoadScene("SampleScene", 1f);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            FadeManager.Instance.LoadScene("SampleScene", 1f);
+            return;
+        }
         x=Input.GetAxisRaw("Horizontal"); //左-1,右+1,なにもしない0
 
         //キャラクターの向きを変える
@@ -95,6 +113,7 @@ public class CharaCtl : MonoBehaviour
             }
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
             isItemGetting=true;
+            SoundManager.Instance.PlaySE(SE.BtnItemGet);
         }else if(isItemGetting && Input.GetKeyDown(KeyCode.Return)){
             if(spRenderer.flipX==true){
                 itemObject.transform.position=transform.position+Vector3.right*xOffset;
@@ -102,9 +121,10 @@ public class CharaCtl : MonoBehaviour
                 itemObject.transform.position=transform.position+Vector3.left*xOffset;
             }
             isItemGetting=false;
-            item=null; 
+            item=null;
+            SoundManager.Instance.PlaySE(SE.BtnItemSet);
         }
-        if(isItemGetting){
+        if (isItemGetting){
             itemObject.transform.position=transform.position+Vector3.up*yOffset;
         }
     }
