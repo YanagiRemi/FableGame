@@ -10,6 +10,7 @@ public class EnterWoodHouse : MonoBehaviour
     private GameObject hammer;
     [SerializeField]
     private CharaCtl charaCtl;
+    public WoodHouse woodHouse;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +30,6 @@ public class EnterWoodHouse : MonoBehaviour
             charaCtl.itemObject.SetActive(true);
         }
         hammer.SetActive(true);
+        woodHouse.hasEnteredWoodHouse=true;
     }
 }

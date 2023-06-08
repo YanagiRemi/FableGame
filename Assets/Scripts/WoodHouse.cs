@@ -17,6 +17,7 @@ public class WoodHouse : MonoBehaviour
     private GameObject pigGimmick2;
     [SerializeField]
     private float waitTime=1.0f;
+    public bool hasEnteredWoodHouse=false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class WoodHouse : MonoBehaviour
     void Update()
     {
             if(isWoodHouseTouching&&Input.GetKeyDown(KeyCode.Space)){
-                if(isBrokenHouse){
+                if(!hasEnteredWoodHouse && isBrokenHouse){
                     wolf.GetComponent<Rigidbody2D>().gravityScale=0;
                     wolf.transform.localPosition=new Vector2(1.38f,-1.69f);
                     StartCoroutine(WaitAndHideWolf());

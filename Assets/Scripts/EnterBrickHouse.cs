@@ -12,6 +12,8 @@ public class BrickHouse : MonoBehaviour
     private GameObject nabe;
     [SerializeField]
     private CharaCtl charaCtl;
+    [SerializeField]
+    private Chimney chimney;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +35,6 @@ public class BrickHouse : MonoBehaviour
         }
         knife.SetActive(true);
         nabe.SetActive(true);
+        chimney.hasEnterdBrickHouse=true;
     }
 }

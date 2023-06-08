@@ -17,6 +17,14 @@ public class TextDisplay : MonoBehaviour
     public GameObject nabe;
     public Sprite fireNabe;
     public GameObject logBridge;
+    public bool brickHint=false;
+    public float waitTime=2.0f;
+    public BurnStrawHouse BurnStrawHouse;
+    public bool strawHint=false;
+    public bool woodHint=false;
+    public WoodHouse woodHouse;
+    public BurnStrawHouse burnStrawHouse;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,16 +42,47 @@ public class TextDisplay : MonoBehaviour
             textComponent.text="ヒント:家と家の間を渡れる橋を作ろう。木の家の屋根の上に使えそうなものがあるね";
         }else if(chimney.isBurning){
             textComponent.text="ヒント:ブタが仕掛けた煙突の中の熱い鍋をどうにかしたいな。。";
+        }else if(!chimney.isBurning && !chimney.hasEnterdBrickHouse){
+            textComponent.text="ヒント:煙突に入ろう";
+        }else if(!brickHint&&chimney.hasEnterdBrickHouse){
+            textComponent.text="ヒント:藁のブタが出てきた";
+            StartCoroutine(Wait1());
         }else if(!logBridge.activeSelf && !ax.activeSelf){
             textComponent.text="ヒント:川の上に橋を作って渡ろう。丸太で作れそうだ";
         }else if(!ax.activeSelf){
             textComponent.text="ヒント:木に縛り付けられたオノのロープを切ろう";
         }else if(!woodhouse.isBrokenHouse){
-            textComponent.text="ヒント:オノで木の家のドアを壊して木の家に入ろう";
+            textComponent.text="ヒント:オノで木の家のドアを壊そう";
+        }else if(!woodHouse.hasEnteredWoodHouse&&woodhouse.isBrokenHouse){
+            textComponent.text="ヒント:木の家に入ろう";
+        }else if(!woodHint&&woodHouse.hasEnteredWoodHouse){
+            textComponent.text="ヒント:木のブタが出てきた";
+            StartCoroutine(Wait2());
         }else if(!brick.activeSelf){
             textComponent.text="ヒント:レンガの家にヒビが入っている部分があるね。ハンマーで壊そう";
         }else if(nabe.GetComponent<SpriteRenderer>().sprite!=fireNabe){
-            textComponent.text="ヒント:藁の家は火をつけて壊そう。火は石と鉄で起こせそうだ。";
+            textComponent.text="ヒント:藁の家は火をつけて壊そう。火は石と鉄で起こせそうだ。ナベは鉄製だ。";
+        }else if(!burnStrawHouse.hasBurnedStrawHouse&&!burnStrawHouse.isStrawBurning){
+            textComponent.text="ヒント:ナベの火を藁の家に引火させよう。";
+        }else if(burnStrawHouse.isStrawBurning){
+            textComponent.text="ヒント:藁が燃えている。";
+        }else if(!strawHint){
+            textComponent.text="ヒント:三匹のブタが出てきた";
+            StartCoroutine(Wait3());
         }
+    }
+    IEnumerator Wait1(){
+        yield return new WaitForSeconds(waitTime);
+        brickHint=true;
+    }
+
+    IEnumerator Wait2(){
+        yield return new WaitForSeconds(waitTime);
+        woodHint=true;
+    }
+
+    IEnumerator Wait3(){
+        yield return new WaitForSeconds(waitTime);
+        strawHint=true;
     }
 }

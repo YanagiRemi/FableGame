@@ -25,7 +25,7 @@ public class Chimney : MonoBehaviour
     private bool isWatering;
     private Renderer renderer;
     public GameObject pigGimmick1;
-    private bool hasEnterdBrickHouse=false;
+    public bool hasEnterdBrickHouse=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +61,6 @@ public class Chimney : MonoBehaviour
                     if(charaCtl.item!=null){
                         charaCtl.itemObject.SetActive(false);
                     }
-                    hasEnterdBrickHouse=true;
                     pigGimmick1.SetActive(true);
             }
         }else if(isWatering){

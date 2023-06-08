@@ -452,6 +452,7 @@ MonoBehaviour:
   emptyBucket: {fileID: 21300000, guid: 79463449243814b90897482f88e73932, type: 3}
   isWatering: 0
   pigGimmick1: {fileID: 253159179}
+  hasEnterdBrickHouse: 0
 --- !u!1 &248087766
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +608,7 @@ MonoBehaviour:
   knife: {fileID: 2131869217}
   nabe: {fileID: 295764103}
   charaCtl: {fileID: 1164111058}
+  chimney: {fileID: 64898098}
 --- !u!1 &295764103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1071775970
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3892,6 +3894,7 @@ MonoBehaviour:
   wolf: {fileID: 1164111051}
   hammer: {fileID: 2146765424}
   charaCtl: {fileID: 1164111058}
+  woodHouse: {fileID: 1165905273}
 --- !u!1 &1105569698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,6 +4462,7 @@ MonoBehaviour:
   wolf: {fileID: 1164111051}
   pigGimmick2: {fileID: 1094467668}
   waitTime: 1
+  hasEnteredWoodHouse: 0
 --- !u!61 &1165905274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5112,6 +5116,13 @@ MonoBehaviour:
   nabe: {fileID: 295764103}
   fireNabe: {fileID: 21300000, guid: 10f8f5aeb8b124c53b9cb2158987c8cf, type: 3}
   logBridge: {fileID: 395862189}
+  brickHint: 0
+  waitTime: 1
+  BurnStrawHouse: {fileID: 2145934672}
+  strawHint: 0
+  woodHint: 0
+  woodHouse: {fileID: 1165905273}
+  burnStrawHouse: {fileID: 2145934672}
 --- !u!1 &1586468002
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,7 +5371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1792016367
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5884,7 +5895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067083810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.17, y: -1.69, z: -1.4}
+  m_LocalPosition: {x: 2.65, y: -1.77, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6516,6 +6527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStrawHouseTouching: 0
   charaCtl: {fileID: 1164111058}
+  isStrawBurning: 0
+  hasBurnedStrawHouse: 0
 --- !u!1 &2146765424
 GameObject:
   m_ObjectHideFlags: 0

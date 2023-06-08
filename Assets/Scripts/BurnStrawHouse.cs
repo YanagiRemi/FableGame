@@ -8,6 +8,8 @@ public class BurnStrawHouse : MonoBehaviour
     private bool isStrawHouseTouching;
     [SerializeField]
     private CharaCtl charaCtl;
+    public bool isStrawBurning=false;
+    public bool hasBurnedStrawHouse=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class BurnStrawHouse : MonoBehaviour
                 switch(charaCtl.item.ItemType){
                     case Items.FireNabe:
                         GetComponent<Animator>().enabled=true;
+                        isStrawBurning=true;
                     break;
                 }
             }
@@ -34,5 +37,10 @@ public class BurnStrawHouse : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider) {
         isStrawHouseTouching=false;
+    }
+
+    private void BurnedStrawHouse(){
+        hasBurnedStrawHouse=true;
+        isStrawBurning=false;
     }
 }
