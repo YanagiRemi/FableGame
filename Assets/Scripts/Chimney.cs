@@ -21,8 +21,7 @@ public class Chimney : MonoBehaviour
     private float targetAngle = 45f;
     [SerializeField]
     private Sprite emptyBucket;
-    [SerializeField]
-    private bool isWatering;
+    public bool isWatering;
     private Renderer renderer;
     public GameObject pigGimmick1;
     public bool hasEnterdBrickHouse=false;

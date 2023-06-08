@@ -40,8 +40,10 @@ public class TextDisplay : MonoBehaviour
             textComponent.text="ヒント:バケツに水を汲もう";
         }else if(!woodenBridge2.activeSelf){
             textComponent.text="ヒント:家と家の間を渡れる橋を作ろう。木の家の屋根の上に使えそうなものがあるね";
-        }else if(chimney.isBurning){
+        }else if(!chimney.isWatering&&chimney.isBurning){
             textComponent.text="ヒント:ブタが仕掛けた煙突の中の熱い鍋をどうにかしたいな。。";
+        }else if(chimney.isWatering){
+            textComponent.text="煙突の中に水を入れている";
         }else if(!chimney.isBurning && !chimney.hasEnterdBrickHouse){
             textComponent.text="ヒント:煙突に入ろう";
         }else if(!brickHint&&chimney.hasEnterdBrickHouse){
@@ -65,9 +67,9 @@ public class TextDisplay : MonoBehaviour
         }else if(!burnStrawHouse.hasBurnedStrawHouse&&!burnStrawHouse.isStrawBurning){
             textComponent.text="ヒント:ナベの火を藁の家に引火させよう。";
         }else if(burnStrawHouse.isStrawBurning){
-            textComponent.text="ヒント:藁が燃えている。";
+            textComponent.text="藁が燃えている。";
         }else if(!strawHint){
-            textComponent.text="ヒント:三匹のブタが出てきた";
+            textComponent.text="三匹のブタが出てきた";
             StartCoroutine(Wait3());
         }
     }
