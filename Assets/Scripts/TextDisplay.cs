@@ -113,9 +113,8 @@ public class TextDisplay : MonoBehaviour
     }
 
     IEnumerator Wait3(){
-        yield return new WaitForSeconds(waitTime);
-        strawHint=true;
         yield return new WaitForSeconds(3f);
+        strawHint=true;
         FadeManager.Instance.LoadScene("Ending", 2f);
     }
 }
