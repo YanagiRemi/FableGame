@@ -16,9 +16,9 @@ public class Chimney : MonoBehaviour
     [SerializeField]
     private float angle;
     [SerializeField]
-    private float rotateSpeed = 8f; // 回転速度
+    private float rotateSpeed = 12f; // 回転速度
     [SerializeField]
-    private float targetAngle = 45f;
+    private float targetAngle = 55f;
     [SerializeField]
     private Sprite emptyBucket;
     public bool isWatering;
@@ -49,7 +49,7 @@ public class Chimney : MonoBehaviour
                         isWatering=true;
                         charaCtl.isItemGetting=false;
                         charaCtl.item=null;
-                        bucket.transform.localPosition = new Vector2(15.0f,2.0f);
+                        bucket.transform.localPosition = new Vector2(15.12f,1.48f);
                         break;
                 }
             }

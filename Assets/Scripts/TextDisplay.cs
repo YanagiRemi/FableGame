@@ -44,7 +44,7 @@ public class TextDisplay : MonoBehaviour
         }else if(bucket.GetComponent<SpriteRenderer>().sprite!=bucketWithWater && chimney.isBurning){
             textComponent.text="ヒント:まずは煙突の中の熱々の鍋の火を消せるものを用意しよう";
         }else if(!logStairs.activeSelf&&chimney.isBurning){
-            textComponent.text="ヒント:わらの家の左側に階段をつくって登れるようにしよう。";
+            textComponent.text="ヒント:わらの家の左側に階段をつくって登れるようにしよう。丸太が使えそうだ。";
         }else if(!woodenBridge2.activeSelf){
             textComponent.text="ヒント:わらの家とレンガの家の間が渡れない。木の家の屋根の上に使えそうなものがあったはず。。";
         }else if(!chimney.isWatering&&chimney.isBurning){
@@ -52,7 +52,7 @@ public class TextDisplay : MonoBehaviour
         }else if(chimney.isWatering){
             textComponent.text="煙突の中に水を入れている。";
         }else if(!chimney.isBurning && !chimney.hasEnterdBrickHouse){
-            textComponent.text="ヒント:煙突に入ろうか";
+            textComponent.text="ヒント:これで煙突の中の鍋の火が消えたようだ。煙突に入ろう。";
         }else if(!brickHint&&chimney.hasEnterdBrickHouse){
             textComponent.text="わらの家のブタは木の家に逃げた。ナイフと鉄のナベを家の中で見つけた。";
             StartCoroutine(Wait1());
@@ -60,7 +60,7 @@ public class TextDisplay : MonoBehaviour
             textComponent.text="次は木の家に入れるようにしよう。なにかでドアを壊せないかな。";
             StartCoroutine(MiddleWait());
         }else if(!logBridge.activeSelf && !ax.activeSelf){
-            textComponent.text="ヒント:川の上が渡れないから橋を作ろう。さっきの丸太で作れそうだ。";
+            textComponent.text="ヒント:川が渡れないから橋を作ろう。さっきの丸太で作れそうだ。";
         }else if(!ax.activeSelf){
             textComponent.text="ヒント:木に縛り付けられたオノのロープを何かで切ろう。";
         }else if(!woodhouse.isBrokenHouse){
@@ -78,7 +78,7 @@ public class TextDisplay : MonoBehaviour
         }else if(nabe.GetComponent<SpriteRenderer>().sprite!=fireNabe){
             textComponent.text="ヒント:わらの家は火をつけて壊そう。火は石と鉄で起こせそうだ。使えるものはないかな。";
         }else if(!burnStrawHouse.hasBurnedStrawHouse&&!burnStrawHouse.isStrawBurning){
-            textComponent.text="ヒント:ナベに火がついた。ナベの火をわらの家に引火させよう。";
+            textComponent.text="ヒント:鉄のナベに火がついた。ナベの火をわらの家に引火させよう。";
         }else if(burnStrawHouse.isStrawBurning){
             textComponent.text="わらが燃えている。";
         }else if(!strawHint){

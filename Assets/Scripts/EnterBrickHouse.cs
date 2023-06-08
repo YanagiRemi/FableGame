@@ -28,6 +28,7 @@ public class BrickHouse : MonoBehaviour
 
     private void ExitingBrickHouse(){
         wolf.transform.localPosition = new Vector2(12.63f,-1.33f);
+        wolf.GetComponent<SpriteRenderer>().flipX=false;
         wolf.GetComponent<Renderer>().sortingLayerName="Ookami";
         wolf.SetActive(true);
         if(charaCtl.item!=null){
