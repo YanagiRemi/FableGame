@@ -3738,8 +3738,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.9944153, y: -2.8819482}
-  m_Size: {x: 3.32131, y: 3.5019083}
+  m_Offset: {x: -7.1791606, y: -2.8819482}
+  m_Size: {x: 2.9518197, y: 3.5019083}
   m_Direction: 0
 --- !u!68 &1084217999
 EdgeCollider2D:
@@ -4202,7 +4202,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.033482015, y: -0.27179483}
+  m_Offset: {x: 0.015796214, y: -0.20743895}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4213,7 +4213,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3619638, y: 0.38852566}
+  m_Size: {x: 0.39733517, y: 0.5172376}
   m_EdgeRadius: 0
 --- !u!212 &1164111056
 SpriteRenderer:
@@ -5117,8 +5117,8 @@ MonoBehaviour:
   fireNabe: {fileID: 21300000, guid: 10f8f5aeb8b124c53b9cb2158987c8cf, type: 3}
   logBridge: {fileID: 395862189}
   brickHint: 0
-  startWaitTime: 4
-  waitTime: 4
+  startWaitTime: 5.5
+  waitTime: 5.5
   BurnStrawHouse: {fileID: 2145934672}
   strawHint: 0
   woodHint: 0
