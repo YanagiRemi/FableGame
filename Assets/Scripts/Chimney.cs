@@ -55,7 +55,7 @@ public class Chimney : MonoBehaviour
             }
             SoundManager.Instance.PlaySE(SE.BtnItemGet);
         }
-        if(!isBurning&&!hasEnterdBrickHouse){
+        if(!GetComponent<EdgeCollider2D>().enabled&&!isBurning&&!hasEnterdBrickHouse){
             if(wolf.transform.localPosition.y <= -1.0f && wolf.activeSelf){
                     wolf.SetActive(false);
                     if(charaCtl.item!=null){
